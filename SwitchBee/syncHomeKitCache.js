@@ -4,7 +4,7 @@ const Outlet = require('../homekit/Outlet')
 const Valve = require('../homekit/Valve')
 const Lock = require('../homekit/Lock')
 const Shutter = require('../homekit/Shutter')
-// const Thermostat = require('../homekit/Thermostat')
+const Thermostat = require('../homekit/Thermostat')
 
 module.exports = (platform) => {
 	return () => {
@@ -74,9 +74,9 @@ module.exports = (platform) => {
 					platform.connectedDevices[device.id] = new Shutter(device, platform, deviceConfig)
 					break
 
-				// case 'THERMOSTAT':
-				// 	platform.connectedDevices[device.id] = new Thermostat(device, platform)
-				// 	break
+				 case 'THERMOSTAT':
+				 	platform.connectedDevices[device.id] = new Thermostat(device, platform)
+				 	break
 				
 			}
 		})
